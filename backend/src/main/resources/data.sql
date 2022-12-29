@@ -25,3 +25,6 @@ INSERT INTO tb_resource(title,description,position,img_Uri,type,offer_id) VALUES
 INSERT INTO tb_section(title,description,position,img_Uri,resource_id,prerequisite_id) VALUES ('Capitulo 1','Apresentação do curso',1,'https://univercemig.cemig.com.br/theme/image.php/mb2nl/theme/1668808574/course-default',1,null);
 INSERT INTO tb_section(title,description,position,img_Uri,resource_id,prerequisite_id) VALUES ('Capitulo 2',' Vamos continuar o curso   ',2,'https://univercemig.cemig.com.br/theme/image.php/mb2nl/theme/1668808574/course-default',1,1);
 INSERT INTO tb_section(title,description,position,img_Uri,resource_id,prerequisite_id) VALUES ('Capitulo 3','Vamoas finalizar o curso',3,'https://univercemig.cemig.com.br/theme/image.php/mb2nl/theme/1668808574/course-default',1,2);
+
+INSERT INTO tb_enrollmant(user_id,offer_id,enroll_Moment,refund_Moment,available,only_Update) VALUES (1,1,'2023-03-14T10:00:00Z',null,true,false);
+INSERT INTO tb_enrollmant(user_id,offer_id,enroll_Moment,refund_Moment,available,only_Update) VALUES (2,1,'2023-03-14T10:00:00Z',null,true,false);
