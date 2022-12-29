@@ -2,6 +2,7 @@ package com.anapazsantanas.dslearnnbds.entities;
 
 import com.anapazsantanas.dslearnnbds.entities.pk.EnrollmantPK;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -12,7 +13,9 @@ public class Enrollment {
 
     @EmbeddedId
     private EnrollmantPK id =new EnrollmantPK();
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant enrollMoment;
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant refundMoment;
     private boolean available;
     private boolean onlyUpdate;
