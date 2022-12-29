@@ -17,9 +17,8 @@ public class Course implements Serializable {
     private String name;
     private String imgUri;
     private String imgGrayUri;
-    @OneToMany
+    @OneToMany(mappedBy = "course")
     private List<Offer> offers=new ArrayList<>();
-
     public Course(Long id, String name, String imgUri, String imgGrayUri) {
         this.id = id;
         this.name = name;
