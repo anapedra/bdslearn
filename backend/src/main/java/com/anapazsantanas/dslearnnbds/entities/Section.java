@@ -2,6 +2,8 @@ package com.anapazsantanas.dslearnnbds.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -22,6 +24,8 @@ public class Section implements Serializable {
     @ManyToOne
     @JoinColumn(name = "prerequisite_id")
     private Section prerequisite;
+    @OneToMany(mappedBy = "section")
+    private List<Lesson>lessons=new ArrayList<>();
 
     public Section(Long id,String title, String description, Integer position, String imgUri, Resource resource,Section prerequisite) {
         this.id = id;
@@ -63,6 +67,10 @@ public class Section implements Serializable {
 
     public Integer getPosition() {
         return position;
+    }
+
+    public List<Lesson> getLessons() {
+        return lessons;
     }
 
     public void setPosition(Integer position) {

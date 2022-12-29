@@ -2,11 +2,11 @@ package com.anapazsantanas.dslearnnbds.entities;
 
 import com.anapazsantanas.dslearnnbds.entities.pk.EnrollmantPK;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_enrollmant")
 public class Enrollment {
@@ -19,6 +19,8 @@ public class Enrollment {
     private Instant refundMoment;
     private boolean available;
     private boolean onlyUpdate;
+    @ManyToMany(mappedBy ="enrollmentDone" )
+    private Set<Lesson>lessonsDone=new HashSet<>();
 
     public Enrollment() {
 
@@ -39,6 +41,11 @@ public class Enrollment {
    public void setStent(User user){
         id.setUser(user);
    }
+
+    public Set<Lesson> getLessonsDone() {
+        return lessonsDone;
+    }
+
     public Offer getOffer(){
         return id.getOffer();
     }
