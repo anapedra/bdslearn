@@ -22,9 +22,11 @@ public class Offer implements Serializable {
     private Instant endMoment;
     @ManyToOne
     @JoinColumn(name = "course_id")
+
     private Course course;
     @OneToMany(mappedBy = "offer")
     private List<Resource>resources=new ArrayList<>();
+
     @OneToMany(mappedBy = "offer")
     private List<Topic>topics=new ArrayList<>();
 

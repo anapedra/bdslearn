@@ -4,8 +4,7 @@ import com.anapazsantanas.dslearnnbds.entities.pk.EnrollmantPK;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_enrollmant")
@@ -21,6 +20,8 @@ public class Enrollment {
     private boolean onlyUpdate;
     @ManyToMany(mappedBy ="enrollmentDone" )
     private Set<Lesson>lessonsDone=new HashSet<>();
+    @OneToMany(mappedBy ="enrollment" )
+    private List<Deliver> delivers=new ArrayList<>();
 
     public Enrollment() {
 
@@ -44,6 +45,10 @@ public class Enrollment {
 
     public Set<Lesson> getLessonsDone() {
         return lessonsDone;
+    }
+
+    public List<Deliver> getDelivers() {
+        return delivers;
     }
 
     public Offer getOffer(){
@@ -84,5 +89,18 @@ public class Enrollment {
 
     public void setOnlyUpdate(boolean onlyUpdate) {
         this.onlyUpdate = onlyUpdate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Enrollment)) return false;
+        Enrollment that = (Enrollment) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
