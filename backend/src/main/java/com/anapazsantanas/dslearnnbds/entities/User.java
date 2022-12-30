@@ -19,7 +19,7 @@ public class User implements Serializable {
     @JoinTable(name = "tb_user_role",joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles=new HashSet<>();
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Notification>notifications=new ArrayList<>();
 
     public User(Long id, String name, String email, String password) {

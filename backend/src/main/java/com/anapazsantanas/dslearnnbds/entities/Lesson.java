@@ -2,9 +2,7 @@ package com.anapazsantanas.dslearnnbds.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_lesson")
@@ -30,6 +28,10 @@ public abstract class Lesson implements Serializable {
             }
             )
     private Set<Enrollment> enrollmentDone=new HashSet<>();
+    @OneToMany(mappedBy = "lesson")
+    private List<Deliver>delivers=new ArrayList<>();
+    @OneToMany(mappedBy = "lesson")
+    private List<Topic>topics=new ArrayList<>();
 
     public Lesson() {
     }
@@ -78,6 +80,13 @@ public abstract class Lesson implements Serializable {
         this.section = section;
     }
 
+    public List<Deliver> getDelivers() {
+        return delivers;
+    }
+
+    public List<Topic> getTopics() {
+        return topics;
+    }
 
     @Override
     public boolean equals(Object o) {

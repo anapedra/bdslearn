@@ -25,6 +25,8 @@ public class Offer implements Serializable {
     private Course course;
     @OneToMany(mappedBy = "offer")
     private List<Resource>resources=new ArrayList<>();
+    @OneToMany(mappedBy = "offer")
+    private List<Topic>topics=new ArrayList<>();
 
     public Offer(Long id, String edition, Instant startMoment, Instant endMoment, Course course) {
         this.id = id;
@@ -81,6 +83,10 @@ public class Offer implements Serializable {
 
     public void setEndMoment(Instant endMoment) {
         this.endMoment = endMoment;
+    }
+
+    public List<Topic> getTopics() {
+        return topics;
     }
 
     public Course getCourse() {
