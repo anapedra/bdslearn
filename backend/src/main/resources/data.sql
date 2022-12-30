@@ -47,4 +47,36 @@ INSERT INTO tb_tesk(id,description,question_Count,approval_Count,weight, due_Dat
 INSERT INTO tb_lesson_done(lesson_id,user_id,offer_id) VALUES (1,1,1);
 INSERT INTO tb_lesson_done(lesson_id,user_id,offer_id) VALUES (2,1,1);
 
+INSERT INTO tb_notification(text,moment,read,route,user_id) VALUES ('Primeiro feedback: Fafor revisar a tarefa',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',true,'/offers/1/resource/1/section/1',1);
+INSERT INTO tb_notification(text,moment,read,route,user_id) VALUES ('Segundo feedback: Fafor revisar a tarefa',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',true,'/offers/1/resource/1/section/1',1);
+INSERT INTO tb_notification(text,moment,read,route,user_id) VALUES ('Terceiro feedback: Fafor revisar a tarefa',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',true,'/offers/1/resource/1/section/1',1);
+
+INSERT INTO tb_deliver(uri,moment,statos,feedback,correct_Count,lesson_id,user_id,offer_id) VALUES ('https://github.com/anapedra/bdslearn/commits/main',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',0,null,null,4,1,1);
+
+INSERT INTO tb_topic(title,body,moment,author_id,offer_id,lesson_id) VALUES ('Título topico 1','Corpo do tópico 1',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',1,1,1);
+INSERT INTO tb_topic(title,body,moment,author_id,offer_id,lesson_id) VALUES ('Título topico 2','Corpo do tópico 2',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',2,1,1);
+INSERT INTO tb_topic(title,body,moment,author_id,offer_id,lesson_id) VALUES ('Título topico 3','Corpo do tópico 3',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',2,1,1);
+INSERT INTO tb_topic(title,body,moment,author_id,offer_id,lesson_id) VALUES ('Título topico 4','Corpo do tópico 4',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',1,1,2);
+INSERT INTO tb_topic(title,body,moment,author_id,offer_id,lesson_id) VALUES ('Título topico 5','Corpo do tópico 5',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',1,1,2);
+INSERT INTO tb_topic(title,body,moment,author_id,offer_id,lesson_id) VALUES ('Título topico 6','Corpo do tópico 6',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',2,1,3);
+
+INSERT INTO tb_topic_likes(topic_id,user_id) VALUES (1,2);
+INSERT INTO tb_topic_likes(topic_id,user_id) VALUES (2,1);
+
+INSERT INTO tb_reply(body,moment, topic_id ,author_id) VALUES ('Tente reiniciar o computador',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',1,2);
+INSERT INTO tb_reply(body,moment, topic_id ,author_id) VALUES ('Obrigada, deu certo',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',1,1);
+
+INSERT INTO tb_reply_likes(reply_id,user_id) VALUES (1,2);
+
+
+
+
+
+
+
+
+
+
+
+
 

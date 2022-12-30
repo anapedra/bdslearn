@@ -6,7 +6,7 @@ import java.time.Instant;
 import java.util.*;
 
 @Entity
-@Table(name = "tb_topc")
+@Table(name = "tb_topic")
 public class Topic implements Serializable {
     private static final long serialVersionUID = 1L;
 
