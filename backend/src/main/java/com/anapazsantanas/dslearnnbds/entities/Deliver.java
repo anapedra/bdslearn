@@ -17,7 +17,7 @@ public class Deliver implements Serializable {
     private Long id;
     private String uri;
     private Instant moment;
-    private DeliverStatus statos;
+    private DeliverStatus status;
     private String feedback;
     private Integer correctCount;
     @ManyToOne
@@ -35,13 +35,13 @@ public class Deliver implements Serializable {
 
     }
 
-    public Deliver(Long id, String uri, Instant moment, String feedback,DeliverStatus statos, Integer correctCount, Enrollment enrollment, Lesson lesson) {
+    public Deliver(Long id, String uri, Instant moment, String feedback,DeliverStatus status, Integer correctCount, Enrollment enrollment, Lesson lesson) {
         super();
         this.id = id;
         this.uri = uri;
         this.moment = moment;
         this.feedback = feedback;
-        this.statos=statos;
+        this.status=status;
         this.correctCount = correctCount;
         this.enrollment = enrollment;
         this.lesson = lesson;
@@ -103,12 +103,12 @@ public class Deliver implements Serializable {
         this.lesson = lesson;
     }
 
-    public DeliverStatus getStatos() {
-        return statos;
+    public DeliverStatus getStatus() {
+        return status;
     }
 
-    public void setStatos(DeliverStatus statos) {
-        this.statos = statos;
+    public void setStatus(DeliverStatus statos) {
+        this.status = status;
     }
 
     @Override

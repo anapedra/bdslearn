@@ -51,7 +51,7 @@ INSERT INTO tb_notification(text,moment,read,route,user_id) VALUES ('Primeiro fe
 INSERT INTO tb_notification(text,moment,read,route,user_id) VALUES ('Segundo feedback: Fafor revisar a tarefa',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',true,'/offers/1/resource/1/section/1',1);
 INSERT INTO tb_notification(text,moment,read,route,user_id) VALUES ('Terceiro feedback: Fafor revisar a tarefa',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',true,'/offers/1/resource/1/section/1',1);
 
-INSERT INTO tb_deliver(uri,moment,statos,feedback,correct_Count,lesson_id,user_id,offer_id) VALUES ('https://github.com/anapedra/bdslearn/commits/main',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',0,null,null,4,1,1);
+INSERT INTO tb_deliver(uri,moment,status,feedback,correct_Count,lesson_id,user_id,offer_id) VALUES ('https://github.com/anapedra/bdslearn/commits/main',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',0,null,null,4,1,1);
 
 INSERT INTO tb_topic(title,body,moment,author_id,offer_id,lesson_id) VALUES ('Título topico 1','Corpo do tópico 1',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',1,1,1);
 INSERT INTO tb_topic(title,body,moment,author_id,offer_id,lesson_id) VALUES ('Título topico 2','Corpo do tópico 2',TIMESTAMP WITHOUT TIME ZONE '2023-03-14T10:00:00Z',2,1,1);
